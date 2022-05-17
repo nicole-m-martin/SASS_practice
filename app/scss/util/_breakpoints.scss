@@ -1,0 +1,23 @@
+// MIXINS W/ A SASS MAP
+
+// 700px for mobile, 900px for tabs, 1440px desktop
+// Sass Map - Modules, can save data in key:value pairs
+
+// best practice is to use ems, not pixels for responsive. So to get the correct em size (it is relative to the parent element for media queries and thats based off the browsers base font size. The default size is 16px, so to convert 700px to ems, divide 700 / 16 = 43.75ems
+
+// this is a Sass Map for the breakpoint sizes
+$breakpoints-up: (
+  // "medium": 700px
+  'medium': 43.75em,
+  // 'large': 900px
+  'large': 56.25em,
+  // 'xlarge': 1440px
+  'xlarge': 90em
+);
+
+// mixin with map-get function
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
