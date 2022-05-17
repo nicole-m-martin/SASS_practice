@@ -1,11 +1,30 @@
+// BEM Layout with Nested SASS.
+// Block, Element, Modifiers
+
+// B-Block: Stand alone component
+
+// E-Element: Child Items contained in Parent Block (use double underscore __ class names)
+
+// Parent Block
 .grid {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
   gap: 40px;
 
-  &__main {
+  // Compound selector, style both child elements at the same time.
+  &__main,
+  &__sidebar {
+    padding: 40px;
   }
 
+  // Child Element 1
+  &__main {
+    background-color: hsl(240, 84%, 33%);
+  }
+
+  // Child Element 2
   &__sidebar {
+    background-color: hsl(300, 85%, 25%);
   }
 }
