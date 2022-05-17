@@ -1,0 +1,23 @@
+@use '../util' as u;
+
+html {
+  box-sizing: border-box; // keeps the box same size
+  font-size: 100%; // for accessibility
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0; //resets
+  padding: 0; //resets
+
+  // sass variables - namespace util set as u.
+  font-family: u.$font;
+  // css custom properties
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

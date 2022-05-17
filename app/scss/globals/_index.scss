@@ -1,0 +1,4 @@
+// takes all the style rules from partials to main scss file
+@forward 'boilerplate';
+@forward 'typography';
+@forward 'colors';

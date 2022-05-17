@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+
+  &__main {
+  }
+
+  &__sidebar {
+  }
+}
