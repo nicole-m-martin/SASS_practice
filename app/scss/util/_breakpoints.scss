@@ -7,17 +7,32 @@
 
 // this is a Sass Map for the breakpoint sizes
 $breakpoints-up: (
-  // "medium": 700px
   'medium': 43.75em,
-  // 'large': 900px
+  // "medium": 700px
   'large': 56.25em,
-  // 'xlarge': 1440px
-  'xlarge': 90em
+  // 'large': 900px
+  'xlarge': 90em // 'xlarge': 1440px,,,,,,
 );
 
-// mixin with map-get function
+$breakpoints-down: (
+  'small': 43.7485em,
+  'medium': 56.2487em,
+  'large': 89.99875em,
+);
+
+// using 0.02 less difference avoids the overlap in the best way possible
+
+// Med:699.98px, Lg:899.98px, xLg:1439.98px
+
+// mixin's with map-get function
 @mixin breakpoint($size) {
   @media (min-width: map-get($breakpoints-up, $size)) {
+    @content; // loads style rules where called
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
     @content;
   }
 }
