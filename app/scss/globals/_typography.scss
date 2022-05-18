@@ -18,26 +18,19 @@ h1 {
   // Using css clamp() function
   // clamp(min value, preferred value, max value)
 
+  // replaced the rem we calculated with the math.div() function from _functions.scss
   // font-size: clamp(28px, 16px + 2vw, 40px);
-  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
-
-  // original media queries
-  @include u.breakpoint(small) {
-    font-size: 42px;
-  }
-  @include u.breakpoint(large) {
-    font-size: 42px;
-  }
+  font-size: clamp(u.rem(28), u.rem(16), u.rem(40));
 }
 
 h2 {
   // font-size: clamp(22px, 14px + 1.5vw, 36px);
-  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+  font-size: clamp(u.rem(22), u.rem(14) + 1.5vw, u.rem(36));
 }
 
 p {
   margin-top: 0;
-  font-size: 1rem;
+  font-size: u.rem(16);
 }
 
 a,
