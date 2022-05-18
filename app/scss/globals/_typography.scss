@@ -20,7 +20,7 @@ h1 {
 
   // replaced the rem we calculated with the math.div() function from _functions.scss
   // font-size: clamp(28px, 16px + 2vw, 40px);
-  font-size: clamp(u.rem(28), u.rem(16), u.rem(40));
+  font-size: clamp(u.rem(28), u.rem(16) + 2vw, u.rem(40));
 }
 
 h2 {

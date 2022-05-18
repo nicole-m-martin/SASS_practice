@@ -1,3 +1,4 @@
+@use 'functions' as f;
 // MIXINS W/ A SASS MAP
 
 // 700px for mobile, 900px for tabs, 1440px desktop
@@ -7,22 +8,21 @@
 
 // this is a Sass Map for the breakpoint sizes
 $breakpoints-up: (
-  'medium': 43.75em,
+  'medium': f.em(700),
   // "medium": 700px
-  'large': 56.25em,
+  'large': f.em(900),
   // 'large': 900px
-  'xlarge': 90em // 'xlarge': 1440px,,,,,,
+  'xlarge': f.em(1440) // 'xlarge': 1440px,,,
 );
 
 $breakpoints-down: (
-  'small': 43.7485em,
-  'medium': 56.2487em,
-  'large': 89.99875em,
+  // Sm:699.98px, Md:899.98px, Lg:1439.98px
+  'small': f.em(699.98),
+  'medium': f.em(899.98),
+  'large': f.em(1439.98)
 );
 
 // using 0.02 less difference avoids the overlap in the best way possible
-
-// Med:699.98px, Lg:899.98px, xLg:1439.98px
 
 // mixin's with map-get function
 @mixin breakpoint($size) {
