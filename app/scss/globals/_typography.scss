@@ -1,3 +1,5 @@
+@use '../util/' as u;
+
 h1,
 h2,
 h3 {
@@ -6,8 +8,36 @@ h3 {
   margin-top: 0; //reset
 }
 
+h1 {
+  // css calc() function is ok but you cant set the max font size
+  // font-size: calc(16px + 2vw);
+
+  // rem's should be used over px with fonts: px / px value wanted
+  // ex: 1rem to equal 16px, so 16 / 16 = 1rem, 28 / 16 = 1.75rem
+
+  // Using css clamp() function
+  // clamp(min value, preferred value, max value)
+
+  // font-size: clamp(28px, 16px + 2vw, 40px);
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+
+  // original media queries
+  @include u.breakpoint(small) {
+    font-size: 42px;
+  }
+  @include u.breakpoint(large) {
+    font-size: 42px;
+  }
+}
+
+h2 {
+  // font-size: clamp(22px, 14px + 1.5vw, 36px);
+  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+}
+
 p {
   margin-top: 0;
+  font-size: 1rem;
 }
 
 a,
