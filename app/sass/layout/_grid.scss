@@ -55,12 +55,18 @@
       text-align: right;
     }
   }
+
   &__widget {
+    // creating a variable that is set to an & thats the parent selector grid__widget.
+    $widget: &;
     background-color: hsl(300, 85%, 25%);
     padding: u.rem(16);
 
+    // this is a Modifier, creates a compound selector
     &--green {
-      @extend .grid__widget;
+      // now changing the extend to the var created above.
+      // the #{$var} is how you display vars inside SASS styles itself.
+      @extend #{$widget};
       background-color: hsl(120, 68%, 26%);
     }
   }
