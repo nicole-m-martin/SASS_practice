@@ -33,17 +33,18 @@
   }
 
   // Child Element 1
-  &__main {
-    background-color: hsl(240, 84%, 33%);
+  // COMMENTED out to show use of magenta utility classes
+  // &__main {
+  //   background-color: hsl(240, 84%, 33%);
 
-    @include u.breakpoint(medium) {
-      background-color: hsl(120, 66%, 18%);
-    }
+  //   @include u.breakpoint(medium) {
+  //     background-color: hsl(120, 66%, 18%);
+  //   }
 
-    @include u.breakpoint(large) {
-      background-color: hsl(22, 92%, 31%);
-    }
-  }
+  //   @include u.breakpoint(large) {
+  //     background-color: hsl(22, 92%, 31%);
+  //   }
+  // }
 
   // Child Element 2
   &__sidebar {
@@ -58,12 +59,6 @@
 
   &__widget {
     padding: u.rem(16);
-    // Helper or utility class with the &.class name inside the parent __widget.
-    &.magenta {
-      background-color: hsl(300, 85%, 25%);
-    }
-    &.green {
-      background-color: hsl(120, 68%, 26%);
-    }
+    // Helper or utility class with the &.class name inside the parent __widget. MOVED to colors.scss to be able to use across all files.
   }
 }
