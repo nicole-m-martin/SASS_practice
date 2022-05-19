@@ -1,54 +1,36 @@
 @use '../util' as u;
 
-// BEM Layout with Nested SASS.
-// Block, Element, Modifiers
-// B-Block: Stand alone component
-// E-Element: Child Items contained in Parent Block (use double underscore __ class names)
-
-// Parent Block
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   gap: u.rem(40);
-  // how to add space for mobile and not desktop, with min() function.
   width: min(100% - u.rem(40), u.rem(1000));
-  // max-width: 1000px;
-
-  // margin-inline new style rule! sets the margin on the left and right/
   margin-inline: auto;
 
-  // media query can be nested in SASS
-  // @include is coming from _breakpoints.scss
-  // Using the parameter large
   @include u.breakpoint(large) {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
   }
 
-  // Compound selector, style both child elements at the same time.
   &__main,
   &__sidebar {
     padding: u.rem(40);
   }
 
-  // Child Element 1
-  // COMMENTED out to show use of magenta utility classes
-  // &__main {
-  //   background-color: hsl(240, 84%, 33%);
+  &__main {
+    background-color: hsl(240, 84%, 33%);
 
-  //   @include u.breakpoint(medium) {
-  //     background-color: hsl(120, 66%, 18%);
-  //   }
+    @include u.breakpoint(medium) {
+      background-color: hsl(120, 66%, 18%);
+    }
 
-  //   @include u.breakpoint(large) {
-  //     background-color: hsl(22, 92%, 31%);
-  //   }
-  // }
+    @include u.breakpoint(large) {
+      background-color: hsl(22, 92%, 31%);
+    }
+  }
 
-  // Child Element 2
   &__sidebar {
-    // using breakpoint-down mixin from _breakpoints.scss
     @include u.breakpoint-down(medium) {
       text-align: center;
     }
@@ -59,6 +41,12 @@
 
   &__widget {
     padding: u.rem(16);
-    // Helper or utility class with the &.class name inside the parent __widget. MOVED to colors.scss to be able to use across all files.
+
+    &.magenta {
+      background-color: hsl(300, 85%, 25%);
+    }
+    &.green {
+      background-color: hsl(120, 68%, 26%);
+    }
   }
 }

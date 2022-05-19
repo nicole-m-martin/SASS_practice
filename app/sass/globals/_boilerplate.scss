@@ -1,8 +1,8 @@
 @use '../util' as u;
 
 html {
-  box-sizing: border-box; // keeps the box same size
-  font-size: 100%; // for accessibility
+  box-sizing: border-box;
+  font-size: 100%;
 }
 
 *,
@@ -12,12 +12,9 @@ html {
 }
 
 body {
-  margin: 0; //resets
-  padding: 0; //resets
-
-  // sass variables - namespace util set as u.
+  margin: 0;
+  padding: 0;
   font-family: u.$font;
-  // css custom properties
   background-color: var(--background-color);
   color: var(--text-color);
 }

@@ -5,26 +5,14 @@ h2,
 h3 {
   font-weight: 700;
   line-height: 1.1;
-  margin-top: 0; //reset
+  margin-top: 0;
 }
 
 h1 {
-  // css calc() function is ok but you cant set the max font size
-  // font-size: calc(16px + 2vw);
-
-  // rem's should be used over px with fonts: px / px value wanted
-  // ex: 1rem to equal 16px, so 16 / 16 = 1rem, 28 / 16 = 1.75rem
-
-  // Using css clamp() function
-  // clamp(min value, preferred value, max value)
-
-  // replaced the rem we calculated with the math.div() function from _functions.scss
-  // font-size: clamp(28px, 16px + 2vw, 40px);
   font-size: clamp(u.rem(28), u.rem(16) + 2vw, u.rem(40));
 }
 
 h2 {
-  // font-size: clamp(22px, 14px + 1.5vw, 36px);
   font-size: clamp(u.rem(22), u.rem(14) + 1.5vw, u.rem(36));
 }
 
