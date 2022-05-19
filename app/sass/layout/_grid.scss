@@ -5,10 +5,6 @@
 // B-Block: Stand alone component
 // E-Element: Child Items contained in Parent Block (use double underscore __ class names)
 
-// this is a placeholder and it starts with a %, main styles you want to add to different modifiers. see below .grid class
-%widget {
-  padding: u.rem(16);
-}
 // Parent Block
 .grid {
   display: grid;
@@ -61,14 +57,12 @@
   }
 
   &__widget {
-    // these are Modifiers, creates a compound selector
-    &--magenta {
-      // now the extend is using a placeholder from top of file. with a %. A way to create placeholder rules and add to the modifier.
-      @extend %widget;
+    padding: u.rem(16);
+    // Helper or utility class with the &.class name inside the parent __widget.
+    &.magenta {
       background-color: hsl(300, 85%, 25%);
     }
-    &--green {
-      @extend %widget;
+    &.green {
       background-color: hsl(120, 68%, 26%);
     }
   }
