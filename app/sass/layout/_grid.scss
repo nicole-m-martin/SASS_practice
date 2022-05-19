@@ -5,6 +5,10 @@
 // B-Block: Stand alone component
 // E-Element: Child Items contained in Parent Block (use double underscore __ class names)
 
+// this is a placeholder and it starts with a %, main styles you want to add to different modifiers. see below .grid class
+%widget {
+  padding: u.rem(16);
+}
 // Parent Block
 .grid {
   display: grid;
@@ -57,16 +61,14 @@
   }
 
   &__widget {
-    // creating a variable that is set to an & thats the parent selector grid__widget.
-    $widget: &;
-    background-color: hsl(300, 85%, 25%);
-    padding: u.rem(16);
-
-    // this is a Modifier, creates a compound selector
+    // these are Modifiers, creates a compound selector
+    &--magenta {
+      // now the extend is using a placeholder from top of file. with a %. A way to create placeholder rules and add to the modifier.
+      @extend %widget;
+      background-color: hsl(300, 85%, 25%);
+    }
     &--green {
-      // now changing the extend to the var created above.
-      // the #{$var} is how you display vars inside SASS styles itself.
-      @extend #{$widget};
+      @extend %widget;
       background-color: hsl(120, 68%, 26%);
     }
   }
