@@ -1,22 +1,21 @@
 @use 'functions' as f;
 // MIXINS W/ A SASS MAP
-
-// 700px for mobile, 900px for tabs, 1440px desktop
 // Sass Map - Modules, can save data in key:value pairs
 
-// best practice is to use ems, not pixels for responsive. So to get the correct em size (it is relative to the parent element for media queries and thats based off the browsers base font size. The default size is 16px, so to convert 700px to ems, divide 700 / 16 = 43.75ems
+// 700px for mobile, 900px for tabs, 1440px desktop
+
+// Best practice is to use ems, not pixels because the are and absolute value. for responsive. So to get the correct em size (it is relative to the parent element for media queries and thats based off the browsers base font size. The default size is 16px, so to convert 700px to ems, divide 700 / 16 = 43.75ems. to avoid manual calculations, use FUNCTIONS! see _function.scss
 
 // this is a Sass Map for the breakpoint sizes
 $breakpoints-up: (
+  // med: 700px, lg: 900px, xlg: 1440px
   'medium': f.em(700),
-  // "medium": 700px
   'large': f.em(900),
-  // 'large': 900px
-  'xlarge': f.em(1440) // 'xlarge': 1440px,,,
+  'xlarge': f.em(1440)
 );
 
 $breakpoints-down: (
-  // Sm:699.98px, Md:899.98px, Lg:1439.98px
+  // Sm:699.98px, Md:899.98cpx, Lg:1439.98px
   'small': f.em(699.98),
   'medium': f.em(899.98),
   'large': f.em(1439.98)
