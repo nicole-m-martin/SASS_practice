@@ -4,6 +4,7 @@
 // Block, Element, Modifiers
 // B-Block: Stand alone component
 // E-Element: Child Items contained in Parent Block (use double underscore __ class names)
+// M-Modifier: Are variants of a specific block or element. Use them to change appearance or behavior. (use double dash -- class names)
 
 // Parent Block
 .grid {
